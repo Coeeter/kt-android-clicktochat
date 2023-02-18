@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "188330373306",
+    "project_id": "clicktochat-71eae",
+    "storage_bucket": "clicktochat-71eae.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:188330373306:android:de0f1f1811c23e2bdf9283",
+        "android_client_info": {
+          "package_name": "com.nasportfolio.clicktochat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "188330373306-64i08vf87pt20703q4hsjqrh8lj1vigc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbetugzGOS5c7Da_940tYfsP3WQgtiSjI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "188330373306-64i08vf87pt20703q4hsjqrh8lj1vigc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
