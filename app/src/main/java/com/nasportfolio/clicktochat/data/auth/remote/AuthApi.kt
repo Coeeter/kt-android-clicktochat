@@ -1,12 +1,9 @@
-package com.nasportfolio.clicktochat.domain.auth
+package com.nasportfolio.clicktochat.data.auth.remote
 
-import com.nasportfolio.clicktochat.domain.users.User
+import com.nasportfolio.clicktochat.data.users.remote.dtos.UserDto
 
-interface AuthRepository {
-    fun getToken(): String
-    fun saveToken(token: String)
-    fun deleteToken()
-    suspend fun getUserByToken(token: String): User
+interface AuthApi {
+    suspend fun getUserByToken(token: String): UserDto
     suspend fun updatePassword(token: String, password: String, oldPassword: String)
     suspend fun login(email: String, password: String): String
     suspend fun register(

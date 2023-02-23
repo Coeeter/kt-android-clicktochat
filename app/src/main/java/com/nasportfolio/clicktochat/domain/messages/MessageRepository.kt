@@ -1,12 +1,11 @@
 package com.nasportfolio.clicktochat.domain.messages
 
 import kotlinx.coroutines.flow.Flow
-import java.io.File
 
 interface MessageRepository {
     fun getAllMessagesOfChat(token: String, otherUserId: String): Flow<List<Message>>
     fun getAllMessagesOfUser(token: String): Flow<List<Message>>
-    suspend fun uploadImage(token: String, image: File): String
+    suspend fun uploadImage(token: String, image: ByteArray): String
     suspend fun connectToSocket(token: String)
     fun observeUsersWhoAreTyping(): Flow<List<String>>
     suspend fun createMessage(receiverId: String, message: String, imageUrl: String)
