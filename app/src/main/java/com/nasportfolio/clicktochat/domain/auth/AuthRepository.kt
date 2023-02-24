@@ -7,6 +7,9 @@ interface AuthRepository {
     fun getToken(): Resource<String>
     fun saveToken(token: String)
     fun deleteToken()
+    fun getUserId(): Resource<String>
+    fun saveUserId(userId: String)
+    fun deleteUserId()
     suspend fun getUserByToken(token: String): Resource<User>
     suspend fun updatePassword(token: String, password: String, oldPassword: String)
     suspend fun login(email: String, password: String): Resource<String>

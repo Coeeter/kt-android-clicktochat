@@ -21,4 +21,20 @@ class AuthSharedPreferences @Inject constructor(
             .remove(AuthPreferences.TOKEN_KEY)
             .apply()
     }
+
+    override fun getCurrentUserId(): String? {
+        return sharedPreferences.getString(AuthPreferences.USER_KEY, null)
+    }
+
+    override fun saveCurrentUserId(userId: String) {
+        sharedPreferences.edit()
+            .putString(AuthPreferences.USER_KEY, userId)
+            .apply()
+    }
+
+    override fun deleteCurrentUserId() {
+        sharedPreferences.edit()
+            .remove(AuthPreferences.USER_KEY)
+            .apply()
+    }
 }

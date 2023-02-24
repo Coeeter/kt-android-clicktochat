@@ -6,6 +6,7 @@ import androidx.room.Room
 import com.nasportfolio.clicktochat.data.auth.local.AuthPreferences
 import com.nasportfolio.clicktochat.data.auth.local.AuthSharedPreferences
 import com.nasportfolio.clicktochat.data.database.ClcDatabase
+import com.nasportfolio.clicktochat.data.messages.local.MessageDao
 import com.nasportfolio.clicktochat.data.users.local.UserDao
 import dagger.Module
 import dagger.Provides
@@ -38,6 +39,12 @@ object LocalDataSourceModule {
     fun providesUserDao(
         clcDatabase: ClcDatabase
     ): UserDao = clcDatabase.getUserDao()
+
+    @Provides
+    @Singleton
+    fun providesMessageDao(
+        clcDatabase: ClcDatabase
+    ): MessageDao = clcDatabase.getMessageDao()
 
     @Provides
     @Singleton

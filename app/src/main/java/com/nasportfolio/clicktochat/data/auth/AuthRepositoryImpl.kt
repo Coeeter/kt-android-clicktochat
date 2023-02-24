@@ -28,6 +28,23 @@ class AuthRepositoryImpl @Inject constructor(
         authPreferences.deleteToken()
     }
 
+    override fun getUserId(): Resource<String> {
+        return try {
+            val token = authPreferences.getCurrentUserId()!!
+            Resource.Success(token)
+        } catch (e: NullPointerException) {
+            Resource.Failure(Exception("Not logged in"))
+        }
+    }
+
+    override fun saveUserId(userId: String) {
+        authPreferences.saveCurrentUserId(userId = userId)
+    }
+
+    override fun deleteUserId() {
+        authPreferences.deleteCurrentUserId()
+    }
+
     override suspend fun getUserByToken(token: String): Resource<User> {
         return try {
             val user = authApi.getUserByToken(token)
